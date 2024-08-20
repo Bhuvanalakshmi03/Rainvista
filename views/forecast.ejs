@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>RainVista - Weather Dashboard</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+     .navbar {
+            background-color: transparent;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar a {
+            color: #f2f2f2;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 0 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #ffffff; /* Hover effect */
+        }
+
+        .navbar .logo {
+            font-family: 'Pacifico', cursive; /* For the "RainVista" logo font style */
+            font-size: 1.75rem;
+            color: #f2f2f2;
+        }
+  </style>
+</head>
+<body>
+  <!-- Nav Bar -->
+  <div class="navbar">
+    <div class="logo">RainVista</div>
+    <div>
+        <a href="/">Home</a>
+        <a href="/forecast">Predict</a>
+        <a href="/stats">Data Analysis</a>
+    </div>
+</div>
+  <h1>FORECASTING</h1>
+  <div class="container">
+    <div class="weather-input">
+      <h3 style="color:#fff">Enter a City Name</h3>
+      <input class="city-input" type="text" placeholder="E.g., Theni">
+      <button class="search-btn">Search</button>
+      <div class="separator"></div>
+      <button class="location-btn">Use Current Location</button>
+      <div id="map" class="map-container"></div>
+    </div>
+    <div class="weather-data">
+      <div class="current-weather">
+        <div class="details">
+          <h2>_______ ( ______ )</h2>
+          <h6>Temperature: __°C</h6>
+          <h6>Wind: __ M/S</h6>
+          <h6>Humidity: __%</h6>
+        </div>
+      </div>
+      <div class="days-forecast">
+        <h2 style="color : #fff">5-Day Forecast</h2>
+        <ul class="weather-cards">
+          <!-- Weather cards will be dynamically inserted here -->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="viewReport">
+    <button class="view-report-btn" onclick="navigateToReport()">View Report</button>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="../js/script.js" defer></script>
+</body>
+</html>
