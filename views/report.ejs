@@ -33,11 +33,11 @@
         }
 
         .navbar a:hover {
-            color: #ffffff; /* Hover effect */
+            color: #ffffff;
         }
 
         .navbar .logo {
-            font-family: 'Pacifico', cursive; /* For the "RainVista" logo font style */
+            font-family: 'Pacifico', cursive;
             font-size: 1.75rem;
             color: #f2f2f2;
         }
@@ -66,6 +66,14 @@
 
         .analysis-section {
             margin-top: 20px;
+            padding: 15px;
+            background-color: #eef7f8;
+            border-left: 5px solid #00aaff;
+            border-radius: 5px;
+        }
+
+        .analysis-section strong {
+            color: #0077cc;
         }
 
         .conclusion {
@@ -86,6 +94,56 @@
             border-radius: 2%;
             background-color: #fff;
         }
+
+        .container {
+    display: flex;
+    justify-content: space-around; /* Distributes space evenly between items */
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.standard-values, .rainfall-graph {
+    flex: 1; /* Make both sections take equal space */
+    padding: 20px;
+    background-color: #f0f8ff;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adds a subtle shadow for better definition */
+}
+
+.standard-values strong, .rainfall-graph strong {
+    color: #2c3e50;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.standard-values p, .rainfall-graph p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #34495e;
+}
+
+.standard-values p strong, .rainfall-graph .bar-container p strong {
+    color: #2980b9;
+}
+
+.rainfall-graph .bar-container {
+    margin-bottom: 10px;
+}
+
+.rainfall-graph .bar {
+    height: 20px;
+    border-radius: 5px;
+    text-align: right;
+    color: white;
+    padding-right: 5px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
     </style>
 </head>
 <body>
@@ -100,6 +158,61 @@
     </div>
     <!-- Report -->
     <div class="report-content"></div>
+
+    <div class="container">
+        <div class="standard-values">
+            <strong>Rainfall Analysis Standard Values:</strong><br>
+            <p><strong>High Cloud Cover:</strong> &gt; 70%</p>
+            <p><strong>Moderate Cloud Cover:</strong> 50% - 70%</p>
+            <p><strong>High Humidity:</strong> &gt; 80%</p>
+            <p><strong>Moderate Humidity:</strong> 60% - 80%</p>
+            <p><strong>Low Atmospheric Pressure:</strong> &lt; 1010 hPa</p>
+            <p><strong>Moderate Atmospheric Pressure:</strong> 1010 - 1020 hPa</p>
+            <p><strong>Temperature:</strong> If temperature is lower than the dew point, condensation and rainfall are more likely.</p>
+            <p><strong>Wind Speed:</strong> Wind speeds &gt; 15 km/h can indicate storm systems, increasing rainfall likelihood.</p>
+            <p><strong>Precipitable Water:</strong> &gt; 20 mm can indicate sufficient moisture in the air for rainfall.</p>
+        </div>
+    
+        <div class="rainfall-graph">
+            <strong>Rainfall Likelihood Factors</strong><br>
+            <div class="bar-container">
+                <p><strong>High Cloud Cover:</strong></p>
+                <div class="bar" style="width: 70%; background-color: #3498db;">&gt; 70%</div>
+            </div>
+            <div class="bar-container">
+                <p><strong>Moderate Cloud Cover:</strong></p>
+                <div class="bar" style="width: 60%; background-color: #2ecc71;">50% - 70%</div>
+            </div>
+            <div class="bar-container">
+                <p><strong>High Humidity:</strong></p>
+                <div class="bar" style="width: 80%; background-color: #e74c3c;">&gt; 80%</div>
+            </div>
+            <div class="bar-container">
+                <p><strong>Moderate Humidity:</strong></p>
+                <div class="bar" style="width: 70%; background-color: #f39c12;">60% - 80%</div>
+            </div>
+            <div class="bar-container">
+                <p><strong>Low Atmospheric Pressure:</strong></p>
+                <div class="bar" style="width: 50%; background-color: #9b59b6;">&lt; 1010 hPa</div>
+            </div>
+            <div class="bar-container">
+                <p><strong>Moderate Atmospheric Pressure:</strong></p>
+                <div class="bar" style="width: 60%; background-color: #16a085;">1010 - 1020 hPa</div>
+            </div>
+            <div class="bar-container">
+                <p><strong>Wind Speed:</strong></p>
+                <div class="bar" style="width: 40%; background-color: #2980b9;">&gt; 15 km/h</div>
+            </div>
+            <div class="bar-container">
+                <p><strong>Precipitable Water:</strong></p>
+                <div class="bar" style="width: 90%; background-color: #27ae60;">&gt; 20 mm</div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
     <!-- Graph -->
     <div class="graph-container">
         <canvas id="weatherGraph" class="graph"></canvas>
