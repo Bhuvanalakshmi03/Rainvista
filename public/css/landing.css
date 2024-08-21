@@ -5,7 +5,7 @@ body {
   background-color: #060431;
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
-  overflow-y:visible;
+  overflow-y: visible;
 }
 
 .Header__container {
@@ -20,17 +20,13 @@ body {
   justify-content: space-between;
   padding: 1em 5vw;
   width: 100%;
+  z-index: 1000;
 }
 
 .Header__left {
   display: flex;
   flex-direction: row;
   font-family: "Satisfy", cursive;
-}
-
-.Header__logo {
-  width: 4.5em;
-  margin: auto;
 }
 
 .Header__title {
@@ -56,6 +52,78 @@ h1 {
   margin: auto 1em;
 }
 
+.Header__title img {
+  max-width: 100%; /* Ensures the image scales down appropriately */
+  height: auto; /* Maintains aspect ratio */
+  display: block; /* Prevents images from overflowing */
+  margin-left: 5%; /* Adjusted for spacing */
+}
+
+/* Toggle Button CSS */
+.Header__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2em;
+  height: 2em;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.Header__toggle span {
+  width: 100%;
+  height: 0.2em;
+  background: white;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+}
+
+/* Hide menu on mobile and display toggle button */
+@media (max-width: 1024px) {
+  .Header__title img {
+    max-width: 80%; /* Adjusts image size for smaller screens */
+    margin-left: 2%; /* Reduces margin for better fit */
+  }
+
+  .Header__menu {
+    display: none;
+    position: absolute;
+    top: 5em;
+    right: 5vw;
+    background-color: #060431;
+    flex-direction: column;
+    width: 70%;
+    padding: 1em;
+  }
+
+  .Header__menuItem {
+    margin: 1em 0;
+    text-align: right;
+  }
+
+  .Header__toggle {
+    display: flex;
+  }
+
+  .Header__toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(0.3em, 0.3em);
+  }
+
+  .Header__toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .Header__toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(0.3em, -0.3em);
+  }
+
+  .Header__menu.open {
+    display: flex;
+  }
+}
+
 .Hero {
   color: white;
   margin: 0;
@@ -66,25 +134,35 @@ h1 {
   justify-content: center;
 }
 
+
 .Hero__content {
-  margin: 40vh auto auto 10vw;
+  margin: 25vh auto auto 8vw;
   width: 50%;
 }
 
 .Hero__title {
-  font-family: "Heebo", sans-serif;
+  font-family: cursive;
   font-weight: 900;
   margin: 0;
-  text-shadow: 0px 0px 8px black;
+  text-shadow: 0px 0px 8px rgb(85, 84, 84);
   font-size: 3em;
   line-height: 1em;
 }
 
 .Hero__subtitle {
+  font-family: cursive;
   opacity: 0.85;
   margin-top: 0.5em;
-  text-shadow: 0px 0px 8px black;
+  text-shadow: 0px 0px 8px rgb(85, 84, 84);
+  font-size: 2em;
+}
+.Hero__details {
+  font-family: cursive;
+  opacity: 0.85;
+  margin-top: 0.5em;
+  text-shadow: 0px 0px 8px rgb(85, 84, 84);
   font-size: 1.5em;
+  font-weight: bold;
 }
 
 .Hero__action {
@@ -229,7 +307,7 @@ h1 {
 .first-wrap {
   height: 100%;
   width: 100vw;
-  background: #ffffff url("../img/img2.png") no-repeat fixed;
+  background: #ffffff url("../img/img2.jpg") no-repeat fixed;
    background-size: cover;
    background-position: 50% 50%;
 }
@@ -238,7 +316,7 @@ h1 {
 .second-wrap {
   height: 100%;
   width: 100vw;
-  background: #ffffff url("../img/img1.png") no-repeat fixed;
+  background: #ffffff url("../img/img1.jpg") no-repeat fixed;
   background-size: cover;
   background-position: 50% 50%;
 }
@@ -247,7 +325,7 @@ h1 {
 .third-wrap {
   height: 100%;
   width: 100vw;
-  background: #ffffff url("../img/img3.png") no-repeat fixed;
+  background: #ffffff url("../img/img3.jpg") no-repeat fixed;
   background-size: cover;
   background-position: 50% 50%;
 }
@@ -308,7 +386,7 @@ h1 {
   display: table;
   height: 50vh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.592);
+  background-color: rgba(0, 0, 0, 0.2);
   p {
     display: table-cell;
     vertical-align: middle;
