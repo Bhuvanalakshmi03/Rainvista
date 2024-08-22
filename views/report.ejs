@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/navbar.css">
     <title>Weather Report</title>
     <style>
         body {
@@ -12,34 +13,6 @@
             padding: 0 2% 0 2%;
             background-color: #f4f4f4;
             color: #333;
-        }
-
-        .navbar {
-            background-color: transparent;
-            padding: 10px 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .navbar a {
-            color: #f2f2f2;
-            text-decoration: none;
-            font-size: 18px;
-            padding: 0 15px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        .navbar a:hover {
-            color: #ffffff;
-        }
-
-        .navbar .logo {
-            font-family: 'Pacifico', cursive;
-            font-size: 1.75rem;
-            color: #f2f2f2;
         }
 
         .report-content {
@@ -147,15 +120,18 @@
     </style>
 </head>
 <body>
-    <!-- NavBar -->
-    <div class="navbar">
-        <div class="logo">RainVista</div>
-        <div>
-            <a href="/">Home</a>
-            <a href="/forecast">Predict</a>
-            <a href="/stats">Data Analysis</a>
-        </div>
+    <!-- Nav Bar -->
+<div class="navbar">
+    <div class="logo">RainVista</div>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/forecast">Predict</a>
+        <a href="/stats">Data Analysis</a>
     </div>
+    <div class="menu-icon">
+        <span>&#9776;</span>
+    </div>
+  </div>
     <!-- Report -->
     <div class="report-content"></div>
 
@@ -385,6 +361,14 @@
         const capitalizeFirstLetter = (string) => {
             return string.charAt(0).toUpperCase() + string.slice(1);
         };
+    </script>
+     <script>
+        const menuIcon = document.querySelector('.menu-icon');
+        const navbar = document.querySelector('.navbar');
+    
+        menuIcon.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
     </script>
 </body>
 </html>
