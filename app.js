@@ -28,6 +28,10 @@ app.get('/stats', (req, res) => {
 });
 
 
+app.get('/standard_conditions', (req, res) => {
+  res.render('std');
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

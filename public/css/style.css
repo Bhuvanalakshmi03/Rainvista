@@ -74,7 +74,7 @@ h1 {
   border-radius: 4px;
   font-size: 1rem;
   color: #fff;
-  background: transparent;
+  background: grey;
   transition: 0.2s ease;
 }
 
@@ -83,7 +83,7 @@ h1 {
 }
 
 .weather-input .location-btn {
-  background-color: transparent;
+  background-color: grey;
 }
 
 .weather-input .location-btn:hover {
@@ -211,7 +211,7 @@ h1 {
 }
 
 .view-report-btn {
-  background-color: black;
+  background-color: grey;
   color: #fff;
   border: #fff;
   border-radius: 2%;
