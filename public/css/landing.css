@@ -138,31 +138,104 @@ h1 {
 .Hero__content {
   margin: 25vh auto auto 8vw;
   width: 50%;
+  text-align: left; /* Ensures text alignment on larger screens */
 }
 
 .Hero__title {
-  font-family: cursive;
+  font-family: "Heebo", sans-serif;
   font-weight: 900;
-  margin: 0;
-  text-shadow: 0px 0px 8px rgb(85, 84, 84);
-  font-size: 3em;
-  line-height: 1em;
+  color: #ffffff; /* A catchy color for the main title */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Adds depth */
+  margin: 0.2em 0;
+  font-size: 3.5em;
+  line-height: 1.2em;
 }
 
-.Hero__subtitle {
-  font-family: cursive;
-  opacity: 0.85;
-  margin-top: 0.5em;
-  text-shadow: 0px 0px 8px rgb(85, 84, 84);
-  font-size: 2em;
-}
+.Hero__subtitle,
 .Hero__details {
-  font-family: cursive;
-  opacity: 0.85;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff; /* Keep it white for readability */
+  opacity: 0.9;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow for clarity */
   margin-top: 0.5em;
-  text-shadow: 0px 0px 8px rgb(85, 84, 84);
+  font-size: 2vw;
+  font-weight: 400;
+}
+
+.Hero__details {
+  margin-top: 0.3em;
   font-size: 1.5em;
-  font-weight: bold;
+  font-weight: 1000;
+  color: #5ffa30; /* Add a different shade for names */
+}
+
+
+@media (max-width: 1200px) {
+  .Hero__title {
+    font-size: 3em;
+    line-height: 1.1em;
+  }
+
+  .Hero__subtitle {
+    font-size: 2.5vw;
+  }
+
+  .Hero__details {
+    font-size: 1.4em;
+  }
+}
+
+@media (max-width: 768px) {
+  .Hero__content {
+    width: 70%;
+    margin: 30vh auto auto 5vw;
+  }
+
+  .Hero__title {
+    font-size: 2.5em;
+    line-height: 1.1em;
+  }
+
+  .Hero__subtitle {
+    font-size: 2.8vw;
+  }
+
+  .Hero__details {
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 480px) {
+  .Hero__content {
+    width: 90%;
+    margin: 35vh auto auto 3vw;
+  }
+
+  .Hero__title {
+    font-size: 2em;
+  }
+
+  .Hero__subtitle {
+    font-size: 3.5vw;
+  }
+
+  .Hero__details {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-height: 500px) {
+  .Hero__title {
+    font-size: 1.8em;
+  }
+
+  .Hero__subtitle {
+    font-size: 2.5vw;
+  }
+
+  .Hero__details {
+    font-size: 1.1em;
+  }
 }
 
 .Hero__action {
@@ -225,7 +298,7 @@ h1 {
   }
 
   .Hero__subtitle {
-    font-size: 1em;
+    font-size: 1.5em;
   }
 
   .Hero__action {
