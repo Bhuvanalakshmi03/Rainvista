@@ -1,5 +1,5 @@
  // Fetch the API key from localStorage
- const API_KEY = '5d06eb37590d61c048926d8d37b513ac';
+ const API_KEY = 'process.env.api';
 
  if (!API_KEY) {
      alert('API Key is missing! Please ensure the API key is correctly set.');
